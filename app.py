@@ -27,8 +27,8 @@ chb_size = st.radio("Select CHB Thickness", ["4 inch", "6 inch"])
 
 # --- Thickness Buttons for Fillet & Plaster ---
 st.subheader("Set Thickness")
-fillet_thickness = st.number_input("Fillet Thickness (mm)", value=38, step=0.01)   # 38mm default
-plaster_thickness = st.number_input("Plaster Thickness (mm)", value=25, step=0.01) # 25mm default
+fillet_thickness = st.number_input("Fillet Thickness (mm)", value=38.0, step=0.01)   # 38mm default
+plaster_thickness = st.number_input("Plaster Thickness (mm)", value=25.0, step=0.01) # 25mm default
 
 # --- Calculate Button ---
 if st.button("Calculate"):
