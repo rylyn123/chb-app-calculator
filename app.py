@@ -27,8 +27,8 @@ chb_size = st.radio("Select CHB Thickness", ["4 inch", "6 inch"])
 
 # --- Thickness Buttons for Fillet & Plaster ---
 st.subheader("Set Thickness")
-fillet_thickness = st.number_input("Fillet Thickness (m)", value=0.038, step=0.001)   # 38mm default
-plaster_thickness = st.number_input("Plaster Thickness (m)", value=0.025, step=0.001) # 25mm default
+fillet_thickness = st.number_input("Fillet Thickness (mm)", value=38, step=0.01)   # 38mm default
+plaster_thickness = st.number_input("Plaster Thickness (mm)", value=25, step=0.01) # 25mm default
 
 # --- Calculate Button ---
 if st.button("Calculate"):
@@ -52,12 +52,12 @@ if st.button("Calculate"):
     chb_volume = wall_area * 12.5
 
     # --- Fillet Mix ---
-    fillet_volume = fillet_area_factor * fillet_thickness * chb_volume
+    fillet_volume = fillet_area_factor * (fillet_thickness / 1000) * chb_volume
     
     # --- Pouring Mix ---
     Pouring_volume = pouring_factor * chb_volume
     # --- Plaster Mix ---
-    plaster_volume = plaster_area_factor * plaster_thickness * chb_volume
+    plaster_volume = plaster_area_factor * (plaster_thickness / 1000) * chb_volume
 
     # --- Output Results ---
     st.success(f"Wall Area: {wall_area:.2f} sqm")
@@ -66,7 +66,7 @@ if st.button("Calculate"):
 
     with col1:
         st.info("🔹 Quantity of CHB")
-        st.write(f"Volume: {chb_volume:.1f} pcs")
+        st.write(f"Quantity: {chb_volume:.1f} pcs")
 
     with col2:
         st.info("🔹 Fillet Mix")
@@ -88,3 +88,4 @@ if st.button("Calculate"):
         st.write(f"Gravel: {Pouring_volume*1:.2f} m³")
         
         
+
