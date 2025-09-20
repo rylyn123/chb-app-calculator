@@ -64,7 +64,7 @@ if st.button("Calculate"):
     else:  # 6 inch
         chb_volume_per_sqm = 0.0036
         fillet_area_factor = 0.06
-        pouring_factor = 0.264
+        pouring_factor = 0.0264
 
     # --- CHB quantity (you used *12.5 earlier; keep if that's your pcs per sqm factor) ---
     chb_volume = wall_area * 12.5  # pcs
@@ -128,3 +128,4 @@ if st.button("Calculate"):
             st.write(f"Sand: {pouring_sand_m3:.3f} m³")
             st.write(f"Gravel: {pouring_gravel_m3:.3f} m³")
             st.write(f"Water: {pouring_water_l:.2f} L")
+
