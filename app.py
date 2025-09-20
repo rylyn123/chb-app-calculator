@@ -43,12 +43,12 @@ plaster_thickness = st.number_input("Plaster Thickness (mm)", value=25.0, step=0
 
 # --- Mixture data (assumed units: cement = bags per m³, sand = m³ per m³, gravel = m³ per m³, water = L per m³) ---
 mixture_data = {
-    options[0]: {"cement": 4.0, "sand": 0.5,  "gravel": 0.96, "water": 70},
-    options[1]: {"cement": 5.0,"sand": 0.5,  "gravel": 0.95, "water": 85},
-    options[2]: {"cement": 6.0,"sand": 0.46,  "gravel": 0.92, "water": 111},
-    options[3]: {"cement": 8.0, "sand": 0.44, "gravel": 0.90,   "water": 145},  # example values
-    options[4]: {"cement": 10.0, "sand": 0.42, "gravel": 0.85,  "water": 185},  # example values
-    options[5]: {"cement": 14.0, "sand": 0.385, "gravel": 0.8,   "water": 207},  # example values
+    options[0]: {"cement": 4.0, "sand": 0.5,  "gravel": 0.96, "water": 7},
+    options[1]: {"cement": 5.0,"sand": 0.5,  "gravel": 0.95, "water": 8},
+    options[2]: {"cement": 6.0,"sand": 0.46,  "gravel": 0.92, "water": 11},
+    options[3]: {"cement": 8.0, "sand": 0.44, "gravel": 0.90,   "water": 14},  # example values
+    options[4]: {"cement": 10.0, "sand": 0.42, "gravel": 0.85,  "water": 18},  # example values
+    options[5]: {"cement": 14.0, "sand": 0.385, "gravel": 0.8,   "water": 20},  # example values
 }
 
 # --- Calculate Button ---
@@ -128,4 +128,5 @@ if st.button("Calculate"):
             st.write(f"Sand: {pouring_sand_m3:.3f} m³")
             st.write(f"Gravel: {pouring_gravel_m3:.3f} m³")
             st.write(f"Water: {pouring_water_l:.2f} L")
+
 
